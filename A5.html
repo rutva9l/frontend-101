@@ -17,39 +17,26 @@
         }
         .path1 {
             stroke: white;
-            stroke-width: 5px;
+            stroke-width:3px;
             stroke-dasharray: 3000;
-            animation: p1 1.5s ease-in forwards;
-        }
-
-        .fill1 {
-            animation: f1 1s linear forwards 1.5s;
+            animation: p1 1.5s ease-in forwards,f1 1s linear forwards 1.5s;
         }
 
         .path2 {
-            stroke-width: 5px;
+            stroke-width: 3px;
             stroke: #ff3f8a;
             stroke-dasharray: 1900;
-            animation: p2 1.5s ease-in forwards;
+            animation: p2 1.5s ease-in forwards 1s, f2 1s linear forwards 2s;
             stroke-dashoffset: 1900;
-            animation-delay: 1s;
         }
 
-        .fill2 {
-            animation: f2 1s linear forwards 2s;
-        }
 
         .path3 {
             stroke: white;
-            stroke-width: 5px;
-            animation: p3 0.75s ease-in forwards;
-            animation-delay: 1.5s;
+            stroke-width: 3px;
+            animation: p3 0.75s ease-in forwards 1.5s,f3 0.5s linear forwards 2.25s;
             stroke-dasharray: 1930;
             stroke-dashoffset: 1930;
-        }
-
-        .fill3 {
-            animation: f3 0.5s linear forwards 2.25s;
         }
 
         @keyframes p1 {
@@ -118,11 +105,8 @@
     <div>
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px">
             <polygon class="path1" points="500,70 725,350 725,445 555,235 555,610 630,550 670,600 500,740"></polygon>
-            <polygon class="fill1" points="500,70 725,350 725,445 555,235 555,610 630,550 670,600 500,740"></polygon>
             <polygon class="path2" points="645,420 645,515 775,675 1005,360 1005,250 775,565"></polygon>
-            <polygon class="fill2" points="645,420 645,515 775,675 1005,360 1005,250 775,565"></polygon>
             <polygon class="path3" points="1035,130 1035,685 1095,745 1095,60"></polygon>
-            <polygon class="fill3" points="1035,130 1035,685 1095,745 1095,60"></polygon>
         </svg>
     </div>
 </body>
