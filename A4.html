@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>A4</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #display {
+            width: 282px;
+            height: 609px;
+            /* background-image: linear-gradient(to bottom left, #3b61e4, #fcbbab); */
+            /* background-image: url(https://i.pinimg.com/originals/1c/60/13/1c6013d1fde3a1ba7be028e6f8149cba.png); */
+            border-radius: 33px;
+        }
+
+        #display img {
+            width: 100%;
+            height: 100%;
+            border-radius: 33px;
+            opacity: 1;
+            transition: ease .7s;
+        }
+
+        #display img.dispNone {
+            opacity: 0;
+        }
+
+        #bezel {
+            position: absolute;
+            width: 307px;
+            height: 634px;
+            left: 4px;
+            top: 4px;
+            background: black;
+            border-radius: 45.5px;
+            /* box-shadow: inset 2px -0px 10px white; */
+            box-shadow: inset 13px 0 11px -11px white, inset -13px 0 11px -11px white, inset 0 10px 12px -12px white, inset 0 -9px 12px -12px white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #line {
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            width: 315px;
+            height: 642px;
+            background: black;
+            z-index: 1;
+            /* border:5px solid black; */
+            /* box-shadow: 6.25px white; */
+            border-radius: 49.5px;
+            /* box-shadow: 0 0 4px white,1px 1px 10px 1px red; */
+            box-shadow: 0 0 6px black, 2px 2px 2px white, -2px -2px 2px white;
+        }
+
+        #body {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 323px;
+            height: 650px;
+            background: #858585;
+            /* border:4px solid #858585; */
+            border-radius: 53.5px;
+            ;
+        }
+
+        #camera {
+            z-index: 1;
+            position: absolute;
+            width: 107px;
+            height: 24px;
+            top: 12px;
+            left: 100px;
+            /* background-image: linear-gradient(to bottom, #212122, black); */
+        }
+
+        .before,
+        .after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            bottom: 0;
+            z-index: -1;
+            border-radius: 0 0 12px 12px;
+            background-image: linear-gradient(to bottom, #020202, black);
+            /* background:blue; */
+        }
+
+        .before {
+            transform: skew(-25deg);
+            left: 25px;
+        }
+
+        .after {
+            transform: skew(25deg);
+            right: 25px;
+            left: auto;
+        }
+
+        .base {
+            position: relative;
+            width: 3px;
+            background: #b1b0b0;
+        }
+
+        .silent {
+            height: 28px;
+            top: 100px;
+            left: -3px;
+        }
+
+        .volume {
+            height: 60px;
+            left: -3px;
+        }
+
+        .down {
+            top: 140px;
+        }
+
+        .up {
+            top: 125px;
+        }
+
+        .power {
+            height: 100px;
+            left: 323px;
+            top: 20px;
+            cursor: pointer;
+        }
+
+        #speaker {
+            width: 50px;
+            height: 5px;
+            background: #363636;
+            border-radius: 7px;
+            position: relative;
+            margin: auto;
+            top: 8px;
+        }
+
+        #cam {
+            width: 6px;
+            height: 6px;
+            border-radius: 6px;
+            position: relative;
+            top: 2px;
+            left: 98px;
+            background: #005270;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="body">
+        <div id="line">
+            <div id="bezel">
+                <div id="display">
+                    <img src="https://i.pinimg.com/originals/1c/60/13/1c6013d1fde3a1ba7be028e6f8149cba.png" alt="">
+                    <div id="camera">
+                        <div id="speaker"></div>
+                        <div id="cam"></div>
+                        <span class="before"> </span>
+                        <span class="after"> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="base silent"></div>
+        <div class="base volume up"></div>
+        <div class="base volume down"></div>
+        <div class="base power" onclick="off()"></div>
+    </div>
+    <div class="text">Try locking me!</div>
+</body>
+<script>
+    function off() {
+        document.querySelector("#display img").classList.toggle("dispNone");
+    }
+</script>
+
+</html>
